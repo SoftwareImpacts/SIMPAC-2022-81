@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    {% include "nav.html" %} {% block body %}{% endblock %}
+
+    <div>
+        <!-- <div class="main-container">
+            <div class="pd-ltr-20 ">
+                <div class="hero-area bg-img bg-overlay-2by5 imageCover">
+                    <p class="col-lg-12 col-md-6 col-sm-12 imageText">
+                        <a class="btn btn_get_started startColor">
+                    Get Started&nbsp;<i class="dw dw-right-arrow startColor get_started_icon"></i>
+                </a>
+                    </p>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <section class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-3"></div>
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="sectionText3">Features you will love forever</h3>
+                    <div class="shape shape-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 271.002 273.167">
+                  <g id="Group_29" data-name="Group 29" transform="translate(-1.887)" opacity="0.096">
+                      <path id="Path_110" data-name="Path 110"
+                            d="M139.5,136.584h0q56.564,0,96.348,40.055h0Q275.9,216.694,275.9,273.168H207.7q0-28.147-20.027-48.174h0q-20.027-20.027-48.174-20.027h0q-28.417,0-48.174,20.027h0c-13.352,13.352-19.847,29.41-19.847,48.174H4.9V0h0A138.5,138.5,0,0,1,54.337,49.076h0C66.967,70.006,73.1,92.92,73.1,118.18h0L72.741,153.9h0A133.477,133.477,0,0,1,139.5,136.584Z"
+                            transform="translate(-3.014)" fill="#ed8074"/>
+                  </g>
+              </svg>
+                    </div>
+                </div>
+
+            </div>
+        </section> -->
+        <div class="jumbotron bg-white">
+            <div class="container">
+                <div class="row mt-5 justify-content-between">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <h1 style="margin-top: 60px;" class="mb-3 font-weight-bold">
+                            Start Classifying Brain Tumors
+                        </h1>
+                        <p class="mb-4">
+                            Now you can start classifying both MR Images and Whole Slide Images from us.<br> You can analyse by yourself how the tumor regions are affected inside the brain and continue with the WSI classification through this website.
+                        </p>
+                        <a href="{{ url_for('mri') }}">
+                            <button class="btn btn-warning font-weight-bold">
+                                Get Started with MRI
+                            </button>
+                        </a>
+                        <a href="{{ url_for('wsi') }}">
+                            <button class="btn btn-warning font-weight-bold">
+                                Get Started with WSI
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{{url_for('static', filename='image/tumor3D.jpg')}}" />
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron bg-light">
+            <div class="container">
+                <div class="row mt-5 justify-content-between">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <img src="{{url_for('static', filename='image/brain_image.jpg')}}" />
+                    </div>
+                    <div class="col-md-5">
+                        <h1 style="margin-top: 30px;" class="mb-3 font-weight-bold">
+                            What this system do?
+                        </h1>
+                        <p class="mb-4">
+                            This system will segment MRI and classify both MRI and WSI images into 3 tumor classes, glioblastoma, oligodendroglioma and astrocytoma.<br> After classifying images, this will generate heatmaps on both MRI and WSI image to identify affected tumor areas clearly.
+                        </p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron bg-white">
+            <div class="container">
+                <div class="row mt-5 justify-content-between">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <h1 style="margin-top: 30px;" class="mb-3 font-weight-bold">
+                            3D MRI Segmentation
+                        </h1>
+                        <p class="mb-4">
+                            Data acquired from 3D MRI volumes will be labelled to 3 isolate regions of interests, Edema, Non-enhancing tumor, Enhancing tumor and displayed.
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{{url_for('static', filename='image/seg.PNG')}}" style="width: 70%;"/>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron bg-light">
+            <div class="container">
+                <div class="row mt-5 justify-content-between">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <img src="{{url_for('static', filename='image/gradcam.PNG')}}" />
+                    </div>
+                    <div class="col-md-5">
+                        <h1 style="margin-top: 30px;" class="mb-3 font-weight-bold">
+                            3D MRI Classification and Interpretable Machine Learning
+                        </h1>
+                        <p class="mb-4">
+                            Interpretability will be applied to the 3D MRI images using GradCAM.<br>GradCAM will generate heatmaps which overlays on MRI identifying tumor regions.
+                        </p>
+                    </div>
+                    <div class="col-md-1"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron bg-white">
+            <div class="container">
+                <div class="row mt-5 justify-content-between">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <h1 style="margin-top: 30px;" class="mb-3 font-weight-bold">
+                            WSI Classification
+                        </h1>
+                        <p class="mb-4">
+                            We will classify WSI images into same 3 tumor regions and will generate Heatmaps overlaid on WSI images to analyze affected areas clearly.
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{{url_for('static', filename='image/WSI.jpeg')}}" style="width: 400px;" />
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+
+        <!-- <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+              <tr>
+                <th scope="row">{{ item.id }}</th>
+                <td>{{ item.name }}</td>
+                <td>{{ item.age }}</td>
+                <td>{{ item.balance }} $</td>
+              </tr>
+
+            {% endfor %}          
+        </tbody>
+      </table> -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

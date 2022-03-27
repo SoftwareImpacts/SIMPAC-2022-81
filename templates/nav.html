@@ -1,0 +1,29 @@
+<nav class="navbar my-navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{{url_for('static', filename='image/tumorLogo.PNG')}}" />
+        </a>
+        <span class="navbar-brand page_name">
+            TUMOR ANALYSIS
+        </span>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span
+          class="iconify bar-icon"
+          data-icon="fa-solid:bars"
+          data-inline="false"
+        ></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('mri') }}">MRI</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="{{ url_for( 'wsi') }} ">WSI</a>
+                </li>
+            </div>
+        </div>
+</nav>
