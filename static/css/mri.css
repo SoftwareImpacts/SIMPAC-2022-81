@@ -82,11 +82,11 @@ span.file-size {
     color: #999;
     padding-left: 0.5rem;
 }
-div#content {
+/* div#content {
     display: none;
-    }
+    } */
 
-div#loading {
+/* div#loading {
     top: 200 px;
     margin: auto;
     position: absolute;
@@ -95,4 +95,4 @@ div#loading {
     height: 24px;
     background: url(image/loader.gif) no-repeat;
     cursor: wait;
-}
+} */
