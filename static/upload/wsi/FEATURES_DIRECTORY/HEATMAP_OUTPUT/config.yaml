@@ -1,0 +1,50 @@
+data_arguments:
+  data_dir: static/upload/wsi/Data_Directory
+  data_dir_key: source
+  label_dict:
+    A: 1
+    G: 0
+    O: 2
+  preset: None
+  process_list: None
+  slide_ext: .tiff
+exp_arguments:
+  batch_size: 384
+  n_classes: 3
+  production_save_dir: static/upload/result/wsi
+  raw_save_dir: static/upload/wsi/FEATURES_DIRECTORY
+  save_exp_code: HEATMAP_OUTPUT
+heatmap_arguments:
+  alpha: 0.4
+  binarize: false
+  binary_thresh: -1
+  blank_canvas: false
+  blur: false
+  calc_heatmap: true
+  cmap: jet
+  custom_downsample: 1
+  save_ext: jpg
+  save_orig: true
+  use_center_shift: true
+  use_ref_scores: true
+  use_roi: false
+  vis_level: -1
+model_arguments:
+  ckpt_path: backend/wsi/checkpoints/s_0_checkpoint.pt
+  drop_out: false
+  initiate_fn: initiate_model
+  model_size: small
+  model_type: clam_sb
+  n_classes: 3
+patching_arguments:
+  custom_downsample: 1
+  overlap: 0.5
+  patch_level: 0
+  patch_size: 256
+sample_arguments:
+  samples:
+  - k: 15
+    mode: topk
+    name: topk_high_attention
+    sample: true
+    seed: 1
